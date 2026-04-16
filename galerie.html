@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie — Die Grundschrift App</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="/images/grundschrift_icon.png">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">
+      <img src="/images/grundschrift_icon.png" alt="Grundschrift">
+      <span>Grundschrift</span>
+    </a>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="/index.html">Start</a></li>
+      <li><a href="/features.html">Features</a></li>
+      <li><a href="/schulmodus.html">Schulmodus</a></li>
+      <li><a href="/galerie.html" class="active">Galerie</a></li>
+      <li><a href="/ueber-uns.html">Über uns</a></li>
+      <li><a href="/kontakt.html">Kontakt</a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Galerie</h2>
+      <p>Die Grundschrift App in Aktion</p>
+    </div>
+
+    <div class="gallery-grid">
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Übungsbildschirm</div>
+        <figcaption>Übungsbildschirm — Buchstabe „A" mit Ankerpunkten und Schreibrichtung</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Levelmenü</div>
+        <figcaption>Levelmenü — Alle Buchstaben auf einen Blick mit Sternefortschritt</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Kindermenü</div>
+        <figcaption>Kindermenü — Kinder wählen ihr Profil mit Avatarbild</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Statistiken</div>
+        <figcaption>Statistiken — Detaillierter Schreibfortschritt mit Replay-Funktion</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Kinderverwaltung</div>
+        <figcaption>Kinderverwaltung — Kinder anlegen, bearbeiten und Gruppen zuweisen</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <div class="gallery-placeholder">Screenshot: Einstellungen</div>
+        <figcaption>Einstellungen — Tagesfortschritt, Bewertung und Levelsperren konfigurieren</figcaption>
+      </figure>
+    </div>
+
+    <p style="text-align: center; margin-top: 32px; color: #888; font-size: 0.9rem;">Screenshots werden in Kürze ergänzt.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <ul class="footer-links">
+      <li><a href="/index.html">Start</a></li>
+      <li><a href="/features.html">Features</a></li>
+      <li><a href="/schulmodus.html">Schulmodus</a></li>
+      <li><a href="/kontakt.html">Kontakt</a></li>
+      <li><a href="/datenschutz.html">Datenschutz</a></li>
+    </ul>
+    <p>Die Grundschrift App — Open Source unter Apache 2.0 Lizenz</p>
+  </div>
+</footer>
+
+</body>
+</html>
