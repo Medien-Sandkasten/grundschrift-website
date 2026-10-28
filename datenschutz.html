@@ -1,111 +1,127 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutz &mdash; Die Grundschrift App</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datenschutz – Grundschrift</title>
   <meta name="description" content="Datenschutzhinweise zur Website und zur Grundschrift App.">
+  <link rel="canonical" href="https://grundschrift-web.medien-sandkasten.de/datenschutz.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Grundschrift">
+  <meta property="og:title" content="Datenschutz">
+  <meta property="og:description" content="Datenschutzhinweise zur Website und zur Grundschrift App.">
+  <meta property="og:url" content="https://grundschrift-web.medien-sandkasten.de/datenschutz.html">
+  <meta property="og:image" content="https://grundschrift-web.medien-sandkasten.de/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Schriftzug Grundschrift neben einem nachgespurten Buchstaben a">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="preload" href="/assets/fonts/grundschrift-gsv.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" href="/images/grundschrift_icon.png">
-  <style>
-    .legal { max-width: 760px; margin: 0 auto; line-height: 1.7; }
-    .legal h2 { margin-top: 40px; margin-bottom: 8px; font-size: 1.3rem; }
-    .legal p, .legal li { color: #444; font-size: 0.95rem; }
-    .legal ul { padding-left: 20px; margin: 8px 0; }
-    .legal li { margin-bottom: 4px; }
-    .legal .notice { background: #EEF4F8; padding: 12px 16px; border-radius: 8px; border-left: 4px solid #1E3A5F; margin: 12px 0; }
-  </style>
+  <link rel="icon" href="/images/grundschrift_icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/index.html" class="nav-logo">
-      <img src="/images/grundschrift_icon.png" alt="Grundschrift">
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/">
+      <img src="/images/grundschrift_icon.png" alt="" width="40" height="40">
       <span>Grundschrift</span>
     </a>
-    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="/index.html">Start</a></li>
-      <li><a href="/features.html">Features</a></li>
-      <li><a href="/schulmodus.html">Schulmodus</a></li>
-      <li><a href="/galerie.html">Galerie</a></li>
-      <li><a href="/ueber-uns.html">&Uuml;ber uns</a></li>
-      <li><a href="/kontakt.html">Kontakt</a></li>
-    </ul>
-  </div>
-</nav>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h1 style="font-size: 1.8rem;">Datenschutz</h1>
-    </div>
-
-    <div class="legal">
-
-      <div class="notice">
-        <p>
-          Diese Seite wird gerade &uuml;berarbeitet. Die bisherige Fassung enthielt
-          Angaben, die nicht mehr zum aktuellen Stand der App passen. Wir haben sie
-          deshalb entfernt. Die vollst&auml;ndige Datenschutzerkl&auml;rung erscheint
-          zusammen mit Version&nbsp;2.0 der App.
-        </p>
-      </div>
-
-      <h2>Diese Website</h2>
-      <p>
-        Diese Website besteht aus statischen Seiten und wird &uuml;ber GitHub Pages
-        (GitHub Inc., USA) ausgeliefert. Beim Aufruf verarbeitet GitHub technisch
-        notwendige Verbindungsdaten wie die IP-Adresse.
-      </p>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptmenue">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span>Menü</span>
+    </button>
+    <nav class="site-nav" id="hauptmenue" aria-label="Hauptmenü">
       <ul>
-        <li>keine Cookies</li>
-        <li>kein Tracking, keine Analysedienste, keine Werbung</li>
-        <li>keine extern nachgeladenen Schriften oder Skripte</li>
+        <li><a href="/">Start</a></li>
+        <li><a href="/app.html">Die App</a></li>
+        <li><a href="/schule.html">Für Schulen</a></li>
+        <li><a href="/sicherheit.html">Datenschutz &amp; Sicherheit</a></li>
+        <li><a href="/open-source.html">Freie Software</a></li>
+        <li><a href="/fragen.html">Fragen</a></li>
       </ul>
-
-      <h2>Die App</h2>
-      <p>
-        <strong>Ohne Schulmodus</strong> l&auml;uft die App ohne Konto und ohne
-        Internetverbindung. Alle Daten bleiben verschl&uuml;sselt auf dem Ger&auml;t.
-      </p>
-      <p>
-        <strong>Im Schulmodus</strong> ist die Schule f&uuml;r die Daten verantwortlich.
-        Namen und Fotos der Kinder sowie Klassennamen werden auf dem Tablet
-        verschl&uuml;sselt, bevor sie es verlassen; der Server kann sie nicht lesen.
-        Die &Uuml;bungsdaten (welche Buchstaben wann ge&uuml;bt wurden, die gezeichneten
-        Striche, Erfolg und &Uuml;bungszeit) kann der Server lesen. Sie werden f&uuml;r die
-        Statistik der Lehrkr&auml;fte gebraucht.
-      </p>
-      <p>
-        Kinder haben keine Konten. Sie &ouml;ffnen ihr Profil mit einer Folge von drei
-        Bildern. Das erleichtert den Start im Unterricht, ist aber kein Passwortschutz.
-      </p>
-
-      <h2>Fragen</h2>
-      <p>Bei Fragen zum Datenschutz erreichen Sie uns &uuml;ber die <a href="/kontakt.html">Kontaktseite</a>.</p>
-
-      <p style="margin-top: 40px; color: #767676; font-size: 0.85rem;">
-        Stand: Oktober 2026
-      </p>
-
-    </div>
+    </nav>
+  </div>
+</header>
+<main id="inhalt" tabindex="-1">
+<section class="page-head">
+  <div class="container narrow">
+    <h1>Datenschutz</h1>
   </div>
 </section>
 
-<footer class="footer">
-  <div class="container">
-    <ul class="footer-links">
-      <li><a href="/index.html">Start</a></li>
-      <li><a href="/features.html">Features</a></li>
-      <li><a href="/schulmodus.html">Schulmodus</a></li>
-      <li><a href="/ueber-uns.html">&Uuml;ber uns</a></li>
-      <li><a href="/datenschutz.html">Datenschutz</a></li>
+<section class="section">
+  <div class="container narrow prose">
+
+    <div class="callout callout-draft">
+      <p>
+        Diese Seite wird gerade &uuml;berarbeitet. Die bisherige Fassung enthielt
+        Angaben, die nicht mehr zum aktuellen Stand der App passen. Wir haben sie
+        deshalb entfernt. Die vollst&auml;ndige Datenschutzerkl&auml;rung erscheint
+        zusammen mit Version&nbsp;2.0 der App.
+      </p>
+    </div>
+
+    <h2>Diese Website</h2>
+    <p>
+      Diese Website besteht aus statischen Seiten und wird &uuml;ber GitHub Pages
+      (GitHub Inc., USA) ausgeliefert. Beim Aufruf verarbeitet GitHub technisch
+      notwendige Verbindungsdaten wie die IP-Adresse.
+    </p>
+    <ul>
+      <li>keine Cookies</li>
+      <li>kein Tracking, keine Analysedienste, keine Werbung</li>
+      <li>keine extern nachgeladenen Schriften oder Skripte</li>
     </ul>
-    <p>Die Grundschrift App &mdash; freie Software unter der AGPL-3.0</p>
+
+    <h2>Die App</h2>
+    <p>
+      <strong>Ohne Schulmodus</strong> l&auml;uft die App ohne Konto und ohne
+      Internetverbindung. Alle Daten bleiben verschl&uuml;sselt auf dem Ger&auml;t.
+    </p>
+    <p>
+      <strong>Im Schulmodus</strong> ist die Schule f&uuml;r die Daten verantwortlich.
+      Namen und Fotos der Kinder sowie Klassennamen werden auf dem Tablet
+      verschl&uuml;sselt, bevor sie es verlassen; der Server kann sie nicht lesen.
+      Die &Uuml;bungsdaten (welche Buchstaben wann ge&uuml;bt wurden, die gezeichneten
+      Striche, Erfolg und &Uuml;bungszeit) kann der Server lesen. Sie werden f&uuml;r die
+      Statistik der Lehrkr&auml;fte gebraucht.
+    </p>
+    <p>
+      Kinder haben keine Konten. Sie &ouml;ffnen ihr Profil mit einer Folge von drei
+      Bildern. Das erleichtert den Start im Unterricht, ist aber kein Passwortschutz.
+    </p>
+
+    <h2>Fragen</h2>
+    <p>Bei Fragen zum Datenschutz erreichen Sie uns &uuml;ber die <a href="/kontakt.html">Kontaktseite</a>.</p>
+
+    <p class="stand">
+      Stand: Oktober 2026
+    </p>
+
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">Grundschrift</p>
+    <nav aria-label="Weitere Seiten">
+      <ul class="footer-links">
+        <li><a href="/ueber.html">Über das Projekt</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+        <li><a href="/datenschutz.html" aria-current="page">Datenschutz</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">
+      Grundschrift ist ein Projekt von Medien-Sandkasten, freie Software unter der AGPL-3.0. Version&nbsp;2.0 ist noch nicht veröffentlicht.<br>
+      Schrift: Grundschrift GSV, <a href="/assets/fonts/OFL.txt">SIL Open Font License&nbsp;1.1</a>.
+    </p>
   </div>
 </footer>
-
 </body>
 </html>

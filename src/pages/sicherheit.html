@@ -1,0 +1,82 @@
+---
+title: Datenschutz & Sicherheit
+description: Welche Daten Grundschrift auf dem Tablet verschlüsselt, welche der Schulserver lesen kann, wo die Verschlüsselung endet und wer was sieht.
+nav: sicherheit
+---
+<section class="page-head">
+  <div class="container">
+    <h1>Datenschutz und Sicherheit</h1>
+    <p class="statement">Was ein Kind identifiziert, wird auf dem Gerät verschlüsselt. Was die Lehrkraft für die Lernbegleitung braucht, kann der Server lesen. Wir sagen genau, was was ist.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+    <div>
+      <h2>Einzelgerät</h2>
+      <p>Ohne Schulmodus braucht die App weder ein Konto noch eine Internetverbindung. Alle Daten liegen verschlüsselt auf dem Tablet und verlassen es nicht.</p>
+    </div>
+    <div>
+      <h2>Schulmodus</h2>
+      <p>Die Tablets arbeiten mit einem Server. Den betreibt die Schule selbst, ihr Schulträger oder die kommunale IT – oder die Schule nutzt den Server von Medien-Sandkasten; dann schließt Medien-Sandkasten mit ihr einen Auftragsverarbeitungsvertrag (AVV). Was ein Kind identifiziert, verschlüsselt das Tablet, bevor es die Daten verschickt. Der Server speichert davon nur verschlüsselte Daten, die er nicht lesen kann.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section section-sage">
+  <div class="container">
+    <div class="section-intro">
+      <h2>Was wo lesbar ist</h2>
+      <p>Im Schulmodus. Verschlüsselt wird mit libsodium (XChaCha20-Poly1305).</p>
+    </div>
+    <div class="table-wrap" role="region" aria-labelledby="tabelle-daten" tabindex="0">
+      <table class="data-table">
+        <caption id="tabelle-daten">Daten im Schulmodus</caption>
+        <thead>
+          <tr><th scope="col">Daten</th><th scope="col">Auf dem Tablet</th><th scope="col">Auf dem Server</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Name des Kindes</th><td><span class="mark mark-sealed">verschlüsselt</span></td><td><span class="mark mark-sealed">verschlüsselt, nicht lesbar</span></td></tr>
+          <tr><th scope="row">Profilfoto (nur mit Einwilligung)</th><td><span class="mark mark-sealed">verschlüsselt</span></td><td><span class="mark mark-sealed">verschlüsselt, nicht lesbar</span></td></tr>
+          <tr><th scope="row">Geschlecht, Schreibhand, Einstellungen</th><td><span class="mark mark-sealed">verschlüsselt</span></td><td><span class="mark mark-sealed">verschlüsselt, nicht lesbar</span></td></tr>
+          <tr><th scope="row">Name und Beschreibung der Klasse</th><td><span class="mark mark-sealed">verschlüsselt</span></td><td><span class="mark mark-sealed">verschlüsselt, nicht lesbar</span></td></tr>
+          <tr><th scope="row">Übungsspuren: Striche, Zeitpunkte, Erfolg</th><td><span class="mark mark-plain">gespeichert</span></td><td><span class="mark mark-readable">lesbar</span></td></tr>
+          <tr><th scope="row">Übungszeit</th><td><span class="mark mark-plain">gespeichert</span></td><td><span class="mark mark-readable">lesbar</span></td></tr>
+          <tr><th scope="row">Zugehörigkeit zu einer Klasse</th><td><span class="mark mark-plain">gespeichert</span></td><td><span class="mark mark-readable">lesbar</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Außerdem kann der Server lesen: die E-Mail-Adresse, mit der sich eine Lehrkraft anmeldet, und Angaben zu den Geräten und zur Schule.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container narrow stack">
+    <div class="callout callout-limit">
+      <h3>Wo die Verschlüsselung endet</h3>
+      <p>Wer ein eingerichtetes Tablet der Schule in der Hand hat oder die Einrichtungs- und Wiederherstellungsunterlagen der Schule besitzt, kann die verschlüsselten Daten lesen. Tablets und Unterlagen gehören deshalb sicher verwahrt.</p>
+    </div>
+
+    <h2>Wer was sieht</h2>
+    <ul class="roles">
+      <li><strong>Lehrkräfte</strong> sehen nur ihre eigenen Klassen.</li>
+      <li><strong>Die Schuladministration</strong> sieht die ganze Schule.</li>
+      <li><strong>Wer den Server betreibt</strong> – die Schule selbst oder Medien-Sandkasten –, sieht die lesbaren Daten aus der Tabelle, aber keine Namen, Fotos oder Klassennamen.</li>
+    </ul>
+
+    <h2>Anmelden und Koppeln</h2>
+    <p><strong>Kinder</strong> haben kein Konto. Sie öffnen ihr Profil mit einer Folge von drei Bildern – unter Aufsicht und nur auf dem Tablet. Die Bildfolge wird nie an den Server geschickt. Sie erleichtert den Start im Unterricht, ist aber kein Passwort und kein Schutz vor anderen.</p>
+    <p><strong>Tablets</strong> werden persönlich vor Ort mit dem Server gekoppelt. Das Koppeln ist an eine Anmeldung gebunden und nur kurz gültig.</p>
+    <p><strong>Übungen</strong> werden nicht in Echtzeit übertragen. Lehrkräfte sehen sie nach der Synchronisierung.</p>
+
+    <h2>Einwilligung und Rechtsgrundlage</h2>
+    <div class="callout callout-draft">
+      <h3>Entwurf, mit der oder dem Datenschutzbeauftragten abzustimmen</h3>
+      <p>Eine Einwilligung der Eltern ist nur für das Profilfoto und für den Leihmodus vorgesehen. Alles andere soll sich auf das Schulrecht stützen, in Nordrhein-Westfalen auf §&nbsp;120 Abs.&nbsp;5 und §&nbsp;121 Abs.&nbsp;1 SchulG sowie die VO-DV&nbsp;I und&nbsp;II.</p>
+      <p>Diese Einordnung ist ein Entwurf und keine Rechtsberatung. Die Schule ist als verantwortliche Stelle selbst zuständig: Sie prüft den Einsatz und bindet ihre Datenschutzbeauftragte oder ihren Datenschutzbeauftragten ein.</p>
+    </div>
+
+    <h2>Ohne Werbung, ohne Tracking</h2>
+    <p>Die App enthält keine Werbung und kein Tracking. Diese Website setzt keine Cookies und lädt keine Schriften oder Skripte von anderen Servern nach. Einzelheiten stehen in den <a href="/datenschutz.html">Datenschutzhinweisen</a>.</p>
+  </div>
+</section>

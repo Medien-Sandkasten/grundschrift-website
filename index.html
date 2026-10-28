@@ -1,129 +1,205 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Die Grundschrift App — Handschrift lernen für zuhause und die Schule</title>
-  <meta name="description" content="Die Grundschrift App hilft Kindern beim Erlernen der Handschrift — entwickelt mit dem Grundschulverband, kostenlos, ohne Datenweitergabe.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grundschrift – Schreiben üben auf dem Tablet</title>
+  <meta name="description" content="Kinder üben die Grundschrift auf dem Tablet, Buchstabe für Buchstabe. Freie Software, kostenlos, ohne Werbung. Version 2.0 wird gerade geprüft.">
+  <link rel="canonical" href="https://grundschrift-web.medien-sandkasten.de/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Grundschrift">
+  <meta property="og:title" content="Grundschrift – Schreiben üben auf dem Tablet">
+  <meta property="og:description" content="Kinder üben die Grundschrift auf dem Tablet, Buchstabe für Buchstabe. Freie Software, kostenlos, ohne Werbung. Version 2.0 wird gerade geprüft.">
+  <meta property="og:url" content="https://grundschrift-web.medien-sandkasten.de/">
+  <meta property="og:image" content="https://grundschrift-web.medien-sandkasten.de/assets/img/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Schriftzug Grundschrift neben einem nachgespurten Buchstaben a">
+  <meta name="theme-color" content="#1e3a5f">
+  <link rel="preload" href="/assets/fonts/grundschrift-gsv.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="/css/style.css">
-  <link rel="icon" href="/images/grundschrift_icon.png">
+  <link rel="icon" href="/images/grundschrift_icon.png" type="image/png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <script>document.documentElement.classList.add('js')</script>
+  <script src="/assets/site.js" defer></script>
 </head>
 <body>
-
-<nav class="nav">
-  <div class="nav-inner">
-    <a href="/index.html" class="nav-logo">
-      <img src="/images/grundschrift_icon.png" alt="Grundschrift">
+<a class="skip-link" href="#inhalt">Zum Inhalt springen</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-current="page">
+      <img src="/images/grundschrift_icon.png" alt="" width="40" height="40">
       <span>Grundschrift</span>
     </a>
-    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
-    <ul class="nav-links">
-      <li><a href="/index.html" class="active">Start</a></li>
-      <li><a href="/features.html">Features</a></li>
-      <li><a href="/schulmodus.html">Schulmodus</a></li>
-      <li><a href="/galerie.html">Galerie</a></li>
-      <li><a href="/ueber-uns.html">Über uns</a></li>
-      <li><a href="/kontakt.html">Kontakt</a></li>
-    </ul>
-  </div>
-</nav>
-
-<header class="hero">
-  <div class="container">
-    <img src="/images/grundschrift_icon.png" alt="Grundschrift App Icon" class="hero-icon">
-    <h1>Die Grundschrift App</h1>
-    <p class="tagline">Entwickelt mit dem Grundschulverband — kostenlos, ohne Werbung, ohne Tracking</p>
-    <div class="btn-group">
-      <a href="/schulmodus.html" class="btn btn-primary">Für Schulen</a>
-      <a href="/features.html" class="btn btn-secondary">Für Eltern</a>
-    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hauptmenue">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      <span>Menü</span>
+    </button>
+    <nav class="site-nav" id="hauptmenue" aria-label="Hauptmenü">
+      <ul>
+        <li><a href="/" aria-current="page">Start</a></li>
+        <li><a href="/app.html">Die App</a></li>
+        <li><a href="/schule.html">Für Schulen</a></li>
+        <li><a href="/sicherheit.html">Datenschutz &amp; Sicherheit</a></li>
+        <li><a href="/open-source.html">Freie Software</a></li>
+        <li><a href="/fragen.html">Fragen</a></li>
+      </ul>
+    </nav>
   </div>
 </header>
-
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <h2>Für wen ist die App?</h2>
-      <p>Zuhause und im Unterricht</p>
-    </div>
-    <div class="card-grid">
-      <div class="card card-audience card-audience-kinder">
-        <h3>Für Kinder</h3>
-        <p>Buchstaben, Zahlen und Verbindungen üben — mit animierter Schreibrichtung, Ankerpunkten und sofortigem Feedback. Sterne sammeln und täglich Fortschritt sehen.</p>
-      </div>
-      <div class="card card-audience card-audience-eltern">
-        <h3>Für Eltern</h3>
-        <p>Einfach einrichten — kein Account, kein Server, keine Daten bei Drittanbietern. Alle Daten bleiben auf dem Gerät. Und: Fortschritte Ihres Kindes jederzeit im Blick.</p>
-      </div>
-      <div class="card card-audience card-audience-schulen">
-        <h3>Für Schulen</h3>
-        <p>Zentrales Kinder- und Klassenmanagement, Heatmaps und Statistiken für alle Kinder. Verschlüsselte Synchronisierung — der Server läuft in Ihrer Schule, nicht in der Cloud.</p>
-        <p style="margin-top: 12px;"><a href="/schulmodus.html">→ Zum Schulmodus</a></p>
+<main id="inhalt" tabindex="-1">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <p class="eyebrow">Freie Schreiblern-App für die Grundschule</p>
+      <h1>Grundschrift</h1>
+      <p class="lead">Kinder üben die Grundschrift auf dem Tablet – mit dem Finger oder dem Stift, Buchstabe für Buchstabe. Die App ist freie Software. Sie kostet nichts und zeigt keine Werbung.</p>
+      <p class="status">Version&nbsp;2.0 wird gerade geprüft und ist noch nicht veröffentlicht.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="/app.html">Die App ansehen</a>
+        <a class="btn btn-secondary" href="/schule.html">Für Schulen</a>
       </div>
     </div>
+    <figure class="board board-hero" data-tracer data-autoplay="load">
+  <div class="board-paper"><div class="tracer-slot" data-letter="a"><svg class="board-svg" viewBox="0 20 349 730" role="img" aria-labelledby="t-a-t"><title id="t-a-t">Schreibweg: Kleinbuchstabe a</title><defs><linearGradient id="t-a-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-a-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-a-fade)"/></mask></defs><image href="/assets/levels/kleinbuchstaben-a.svg" x="0" y="0" width="349" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="18.9" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M212.8 306.3C209.1 301.5 200.6 283.9 190.4 277.7C180.3 271.5 163.6 269.7 151.9 269C140.2 268.4 130.3 270.2 120 273.6C109.8 277.1 99.5 283 90.6 289.7C81.7 296.4 73.5 304.8 66.5 313.6C59.6 322.5 54.4 332.6 49 342.6C43.6 352.7 38.1 362.2 34.1 373.7C30 385.3 25.2 399.2 24.5 411.7C23.7 424.3 26.4 437.4 29.6 449C32.8 460.6 36.8 471.5 43.9 481.1C51 490.7 61.4 501.1 72.2 506.6C83.1 512.1 96.5 513.7 108.9 514.1C121.3 514.5 134.9 512.1 146.5 508.8C158.1 505.5 169.5 500.6 178.5 494.2C187.6 487.8 194.3 478.7 200.7 470.5C207.1 462.3 213.5 455.2 216.8 445.1C220.2 434.9 220 422.1 220.9 409.6C221.7 397.2 221.3 382.6 221.8 370.3C222.3 357.9 223.8 346 223.9 335.6C223.9 325.3 222.9 306.6 222.2 308.3C221.5 310 219.7 332 219.9 346C220.2 360 222.5 378.1 223.5 392.3C224.5 406.5 224.7 418.9 225.9 431.2C227.1 443.5 227.3 456 230.7 466.1C234.1 476.2 239.7 484.7 246.1 491.7C252.5 498.6 260.9 505.9 269.3 507.8C277.6 509.8 288 507.3 296.1 503.4C304.2 499.5 314.1 487.5 317.7 484.4"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="212.8" cy="306.3" r="11.7"/><circle class="anchor" data-stroke="0" data-at="0.721" cx="222.2" cy="308.3" r="11.7"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="317.7" cy="484.4" r="11.7"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-a-mask)" aria-hidden="true"/></svg></div><div class="tracer-slot" data-letter="gross-g" hidden><svg class="board-svg" viewBox="0 20 376 730" role="img" aria-labelledby="t-gross-g-t"><title id="t-gross-g-t">Schreibweg: Großbuchstabe G</title><defs><linearGradient id="t-gross-g-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-gross-g-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-gross-g-fade)"/></mask></defs><image data-href="/assets/levels/grossbuchstaben-g.svg" x="0" y="0" width="376" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="18.5" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M279.6 85.8C273.4 83.3 254.6 73.9 242.5 70.6C230.3 67.2 217.7 65.4 206.4 65.6C195.1 65.7 185.8 69 174.5 71.6C163.3 74.3 150.2 76.9 139 81.6C127.9 86.3 117.1 91.9 107.7 99.9C98.3 108 90.1 120.1 82.6 130C75.2 139.9 68.9 148.2 63 159.4C57 170.6 52 184.6 46.9 197.2C41.8 209.9 35.4 222.5 32.2 235.2C28.9 247.9 28.1 260.9 27.4 273.7C26.7 286.4 28.1 298.5 28.2 311.7C28.3 324.8 27.5 339 28.3 352.8C29 366.6 30.3 381.1 32.8 394.5C35.4 408 38.3 421.3 43.4 433.6C48.5 445.9 53.1 456.8 63.3 468.2C73.5 479.5 88.9 494.4 104.7 501.6C120.5 508.9 143.9 510.5 158 512C172.1 513.5 178.8 512.5 189.2 510.6C199.6 508.6 210 504.1 220.2 500.2C230.5 496.2 240.9 493.1 250.6 486.9C260.2 480.8 270.2 471.7 278.4 463.2C286.5 454.8 292.7 445.5 299.5 436.4C306.2 427.3 313.1 418.9 318.8 408.7C324.6 398.5 329 387.4 333.9 375C338.8 362.7 344.9 346.9 348.2 334.8C351.5 322.7 353.7 312.7 353.8 302.6C354 292.6 356.5 279.4 349.1 274.4C341.8 269.4 322.5 272.7 309.6 272.4C296.6 272.2 282.7 272.5 271.3 272.7C259.9 273 246.3 273.9 241.3 274.1"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="279.6" cy="85.8" r="11.5"/><circle class="anchor" data-stroke="0" data-at="0.905" cx="349.1" cy="274.4" r="11.5"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="241.3" cy="274.1" r="11.5"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-gross-g-mask)" aria-hidden="true"/></svg></div><div class="tracer-slot" data-letter="f" hidden><svg class="board-svg" viewBox="0 20 247 730" role="img" aria-labelledby="t-f-t"><title id="t-f-t">Schreibweg: Kleinbuchstabe f</title><defs><linearGradient id="t-f-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-f-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-f-fade)"/></mask></defs><image data-href="/assets/levels/kleinbuchstaben-f.svg" x="0" y="0" width="247" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="16.4" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M218.7 88.2C214.5 85.9 202.5 77.1 193.4 74.8C184.2 72.5 174.1 72.4 164 74.5C154 76.5 140.8 80.6 133 86.9C125.3 93.2 122.8 102.6 117.6 112C112.5 121.4 105.8 132 101.9 143.3C98 154.6 96.2 167.7 94.1 180C92.1 192.3 90.3 205.3 89.6 217C89 228.8 90.1 239.3 90.3 250.5C90.6 261.6 91.2 273 91 283.9C90.8 294.8 89.5 304.9 89.3 315.8C89.1 326.7 89.9 337.9 89.9 349.4C89.8 360.9 89.2 372.9 89 384.8C88.7 396.6 88.5 407.6 88.3 420.3C88.2 432.9 88.5 448.3 88 460.8C87.5 473.4 85.7 483.5 85.4 495.5C85.1 507.4 86.5 520.8 86.4 532.5C86.2 544.2 85.2 555.3 84.7 565.8C84.3 576.2 83.9 584.9 83.9 595.2C83.9 605.5 84.6 616.9 84.6 627.6C84.6 638.4 83.5 649.6 83.8 659.9C84.1 670.1 86 684.4 86.4 689.3"/><path class="ink" data-stroke="1" d="M19.3 265C22.6 265.8 29.8 268.7 39.1 269.6C48.4 270.5 65.3 270.2 75.3 270.4C85.3 270.5 89.7 271 99 270.3C108.3 269.7 121.2 267.3 131.1 266.5C141.1 265.7 149.4 266.1 158.7 265.8C168 265.6 182.2 265.1 187 265"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="218.7" cy="88.2" r="10.2"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="86.4" cy="689.3" r="10.2"/><circle class="anchor" data-stroke="1" data-at="0.0" cx="19.3" cy="265" r="10.2"/><circle class="anchor" data-stroke="1" data-at="1.0" cx="187" cy="265" r="10.2"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-f-mask)" aria-hidden="true"/></svg></div><div class="tracer-slot" data-letter="sz" hidden><svg class="board-svg" viewBox="0 20 288 730" role="img" aria-labelledby="t-sz-t"><title id="t-sz-t">Schreibweg: Kleinbuchstabe ß</title><defs><linearGradient id="t-sz-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-sz-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-sz-fade)"/></mask></defs><image data-href="/assets/levels/kleinbuchstaben-sz.svg" x="0" y="0" width="288" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="20.2" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M24.9 697.7C25 682 23.8 644.3 25.6 603.4C27.3 562.6 33.2 501.6 35.1 452.6C37.1 403.6 35.7 352.3 37.2 309.5C38.8 266.6 40.6 222.1 44.3 195.4C48 168.8 53 164 59.7 149.7C66.5 135.4 78.3 118.3 84.8 109.4C91.4 100.5 94.1 100.2 99.2 96.5C104.3 92.8 109.2 89.9 115.4 87.3C121.6 84.8 131.8 82.3 136.6 81.2C141.3 80.1 141.5 80.8 143.9 80.8C146.2 80.8 146 79.3 150.8 81.2C155.5 83.1 166.5 87.5 172.3 92.3C178.1 97 181.7 102.2 185.6 109.7C189.5 117.2 193.5 127.5 195.7 137.3C197.9 147.2 198.9 160 198.9 168.7C198.9 177.4 198 181.6 195.8 189.3C193.7 197.1 190.2 206.1 186 215.2C181.9 224.3 177.7 234.4 170.9 243.8C164.2 253.2 140.6 264.7 145.6 271.6C150.6 278.6 187.3 282 201.1 285.4C214.8 288.7 221.5 289.1 228.2 291.6C234.9 294.1 237.6 297.2 241.3 300.4C245 303.7 247.8 306.8 250.5 311.3C253.1 315.9 255.4 320 257.3 328C259.1 336 261 349.3 261.5 359.3C262 369.4 261.7 377.7 260.3 388.2C258.9 398.6 256.4 410.8 253.1 421.9C249.9 433.1 245.8 445.1 240.6 455.3C235.5 465.6 228.7 475.8 222.4 483.4C216.1 491 210.3 496 202.8 500.9C195.2 505.9 186.4 510.4 177.4 513.1C168.4 515.9 158 517.6 148.8 517.3C139.6 517 131.1 515.4 122.2 511.4C113.2 507.5 99.6 496.5 95.1 493.5"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="24.9" cy="697.7" r="12.5"/><circle class="anchor" data-stroke="0" data-at="0.671" cx="145.6" cy="271.6" r="12.5"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="95.1" cy="493.5" r="12.5"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-sz-mask)" aria-hidden="true"/></svg></div><div class="tracer-slot" data-letter="3" hidden><svg class="board-svg" viewBox="0 20 341 730" role="img" aria-labelledby="t-3-t"><title id="t-3-t">Schreibweg: Ziffer 3</title><defs><linearGradient id="t-3-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-3-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-3-fade)"/></mask></defs><image data-href="/assets/levels/zahlen-3.svg" x="0" y="0" width="341" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="23.5" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M102.4 143.9C106.9 140.2 121 128.4 129.6 121.8C138.1 115.1 143.8 108.4 153.5 103.8C163.2 99.2 175 94.2 187.8 94.2C200.5 94.2 218.2 97.2 230 103.8C241.8 110.4 252.3 122.4 258.4 133.6C264.6 144.8 267 158.6 266.8 171C266.6 183.3 263.1 196.3 257.2 207.9C251.3 219.6 242.9 229.9 231.5 241C220.1 252 200.1 266.6 188.8 274.2C177.5 281.8 174.1 282 163.7 286.8C153.3 291.5 127.7 301.4 126.3 302.8C124.8 304.3 144.2 298.5 155.2 295.5C166.1 292.4 179.5 284.9 192 284.7C204.4 284.4 219 289.7 229.6 294.1C240.3 298.4 246.9 302.6 255.8 310.8C264.7 319 277 330 283 343.3C289 356.6 290.3 376.6 291.6 390.5C292.9 404.5 292.7 414.4 290.8 426.9C288.9 439.5 288.5 453.9 280.3 465.8C272.1 477.6 252.7 489.5 241.5 498.1C230.3 506.6 225.7 513.1 212.9 517C200.1 520.8 178 521.5 164.7 521.2C151.5 520.8 144.9 518.6 133.3 514.9C121.8 511.2 105.6 505.5 95.7 499.2C85.8 492.9 82.8 484.4 73.9 477.1C65 469.8 47.6 458.9 42.3 455.3"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="102.4" cy="143.9" r="14.6"/><circle class="anchor" data-stroke="0" data-at="0.423" cx="126.3" cy="302.8" r="14.6"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="42.3" cy="455.3" r="14.6"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-3-mask)" aria-hidden="true"/></svg></div><div class="tracer-slot" data-letter="ei" hidden><svg class="board-svg" viewBox="0 20 394 730" role="img" aria-labelledby="t-ei-t"><title id="t-ei-t">Schreibweg: Verbindung ei</title><defs><linearGradient id="t-ei-fade" x1="0" y1="0" x2="0.55" y2="1"><stop offset="0.55" stop-color="#fff"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient><mask id="t-ei-mask" maskContentUnits="objectBoundingBox"><rect width="1" height="1" fill="url(#t-ei-fade)"/></mask></defs><image data-href="/assets/levels/verbindungen-ei.svg" x="0" y="0" width="394" height="787" preserveAspectRatio="xMidYMid meet"/><g class="inks" fill="none" stroke-width="23.5" stroke-linecap="round" stroke-linejoin="round"><path class="ink" data-stroke="0" d="M42.4 433.5C48.6 433.8 65.3 437.6 79.8 435.4C94.3 433.2 114.5 428.4 129.3 420.2C144.1 412 158.6 397.2 168.7 386.1C178.7 375.1 187.4 364.8 189.7 353.9C192.1 343 187.7 329.1 182.8 320.7C177.9 312.3 170.7 308.6 160.4 303.5C150 298.4 132.5 288.9 120.6 289.9C108.7 290.8 97.4 301.6 88.9 309.2C80.4 316.8 74.5 321.5 69.6 335.3C64.8 349.2 60.5 369.8 59.9 392.5C59.3 415.1 56.7 452.8 66.1 471C75.5 489.1 100.5 497 116.2 501.5C131.9 506 144.6 502.5 160.4 498.2C176.2 493.8 198 485.8 211 475.2C224 464.5 229.3 452 238.3 434.2C247.3 416.4 259.3 391.4 265 368.4C270.8 345.4 272.2 287.2 272.8 296.1C273.4 305 268.7 392.1 268.8 421.8C268.9 451.4 270.2 462.1 273.4 474.1C276.6 486.1 280.1 489.5 288 494C296 498.5 311.1 502.5 321.2 501C331.2 499.5 342 493.5 348.3 484.9C354.6 476.3 357.3 455.5 359.1 449.6"/><path class="ink" data-stroke="1" d="M279.7 194.7C279.7 195 279.7 196.4 279.7 196.8"/></g><g class="anchors"><circle class="anchor" data-stroke="0" data-at="0.0" cx="42.4" cy="433.5" r="14.6"/><circle class="anchor" data-stroke="0" data-at="0.734" cx="272.8" cy="296.1" r="14.6"/><circle class="anchor" data-stroke="0" data-at="1.0" cx="359.1" cy="449.6" r="14.6"/><circle class="anchor" data-stroke="1" data-at="0.0" cx="279.7" cy="194.7" r="14.6"/><circle class="anchor" data-stroke="1" data-at="1.0" cx="279.7" cy="196.8" r="14.6"/></g><image class="finger" href="/assets/img/finger.png" x="0" y="0" width="140" height="196" mask="url(#t-ei-mask)" aria-hidden="true"/></svg></div></div>
+  <figcaption>
+    <span class="board-caption">So führt die App einen Buchstaben vor. Danach spurt das Kind selbst nach.</span>
+    <span class="board-controls">
+      <span class="letter-choices" role="group" aria-label="Buchstabe wählen"><button type="button" class="letter-choice" data-letter="a" aria-pressed="true" aria-label="Kleinbuchstabe a">a</button><button type="button" class="letter-choice" data-letter="gross-g" aria-pressed="false" aria-label="Großbuchstabe G">G</button><button type="button" class="letter-choice" data-letter="f" aria-pressed="false" aria-label="Kleinbuchstabe f">f</button><button type="button" class="letter-choice" data-letter="sz" aria-pressed="false" aria-label="Kleinbuchstabe ß">ß</button><button type="button" class="letter-choice" data-letter="3" aria-pressed="false" aria-label="Ziffer 3">3</button><button type="button" class="letter-choice" data-letter="ei" aria-pressed="false" aria-label="Verbindung ei">ei</button></span>
+      <button class="replay" type="button">Nochmal zeigen</button>
+    </span>
+  </figcaption>
+</figure>
   </div>
 </section>
 
-<section class="section section-alt">
+<section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2>Was Kinder lernen</h2>
-      <p>Vom ersten Buchstaben bis zur flüssigen Verbindung</p>
+    <div class="section-intro">
+      <h2>So übt ein Kind</h2>
+      <p>Jede Übung folgt demselben ruhigen Ablauf.</p>
     </div>
-    <div class="card-grid">
-      <div class="card card-green">
+    <ol class="steps steps-4">
+      <li>
+        <h3>Zuschauen</h3>
+        <p>Zuerst wird der Buchstabe vorgeführt: Ein Finger fährt den Schreibweg ab.</p>
+      </li>
+      <li>
+        <h3>Nachspuren</h3>
+        <p>Dann fährt das Kind den Weg selbst nach. Die App erkennt, ob es dem Weg folgt.</p>
+      </li>
+      <li>
+        <h3>Hilfe, wenn es hakt</h3>
+        <p>Klappt es mehrmals nicht, zeigt der Rettungsring den Weg.</p>
+      </li>
+      <li>
+        <h3>Sterne sammeln <img class="step-star" src="/assets/img/star.png" alt="" width="26" height="26"></h3>
+        <p>Für gelungene Versuche gibt es bis zu fünf Sterne pro Buchstabe.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="section section-sage">
+  <div class="container">
+    <div class="section-intro">
+      <h2>Was geübt wird</h2>
+      <p>Vom einzelnen Buchstaben bis zur Verbindung – in der Grundschrift des Grundschulverbands.</p>
+    </div>
+    <div class="glyph-rows">
+      <div class="glyph-row green">
         <h3>Großbuchstaben</h3>
-        <p>Alle 26 Buchstaben von A bis Z — mit animierter Schreibrichtung und sofortigem Feedback.</p>
+        <p class="glyphs" aria-label="A bis Z">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</p>
       </div>
-      <div class="card card-blue">
-        <h3>Kleinbuchstaben</h3>
-        <p>a bis z inklusive ß — jeder Buchstabe mit Anker-Punkten und Pfaderkennung.</p>
+      <div class="glyph-row">
+        <h3>Kleinbuchstaben mit ß</h3>
+        <p class="glyphs" aria-label="a bis z und ß">a b c d e f g h i j k l m n o p q r s ß t u v w x y z</p>
       </div>
-      <div class="card card-orange">
-        <h3>Zahlen</h3>
-        <p>Die Ziffern 0 bis 9 schreiben lernen — mit den gleichen bewährten Übungsmethoden.</p>
+      <div class="glyph-row orange">
+        <h3>Ziffern</h3>
+        <p class="glyphs" aria-label="0 bis 9">0 1 2 3 4 5 6 7 8 9</p>
       </div>
-      <div class="card card-violet">
-        <h3>Verbindungen</h3>
-        <p>Buchstabenverbindungen wie „ei", „ch", „an" — der Schritt zur flüssigen Schrift.</p>
-      </div>
-      <div class="card card-darkblue">
-        <h3>Linkshänder</h3>
-        <p>Spezielle Schreibanleitungen für linkshändige Kinder bei ausgewählten Buchstaben.</p>
-      </div>
-      <div class="card card-red">
-        <h3>Fortschritt</h3>
-        <p>Sterne sammeln, täglicher Fortschritt — motivierendes Belohnungssystem für Kinder.</p>
+      <div class="glyph-row violet">
+        <h3>Häufige Verbindungen</h3>
+        <p class="glyphs">ei ch en au ie un er</p>
       </div>
     </div>
+    <p class="more"><a href="/app.html">Mehr über die App</a></p>
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="section-header">
-      <h2>Ein Forschungsprojekt</h2>
-      <p>Entstanden an der Laborschule Bielefeld in Zusammenarbeit mit dem Grundschulverband</p>
+    <div class="section-intro">
+      <h2>Zwei Arten, die App zu nutzen</h2>
     </div>
-    <div class="partner-logos">
-      <img src="/images/laborschule_logo.png" alt="Laborschule Bielefeld">
-      <img src="/images/gsv_logo.png" alt="Grundschulverband">
+    <div class="cards cards-2">
+      <div class="card green">
+        <h3 class="mode-label">Einzelgerät</h3>
+        <p>Für zu Hause oder ein einzelnes Tablet in der Klasse.</p>
+        <ul class="ticks">
+          <li>kein Konto, keine Internetverbindung</li>
+          <li>alle Daten bleiben verschlüsselt auf dem Gerät</li>
+        </ul>
+      </div>
+      <div class="card darkblue">
+        <h3 class="mode-label">Schulmodus</h3>
+        <p>Für Schulen, die mehrere Tablets gemeinsam nutzen.</p>
+        <ul class="ticks">
+          <li>Tablets arbeiten mit einem Schulserver</li>
+          <li>Lehrkräfte sehen die Fortschritte ihrer Klassen</li>
+          <li>der Server: selbst betrieben oder von Medien-Sandkasten betrieben</li>
+        </ul>
+        <p class="more"><a href="/schule.html">Der Schulmodus im Einzelnen</a></p>
+      </div>
     </div>
   </div>
 </section>
 
-<footer class="footer">
+<section class="section section-white">
   <div class="container">
-    <ul class="footer-links">
-      <li><a href="/features.html">Features</a></li>
-      <li><a href="/schulmodus.html">Schulmodus</a></li>
-      <li><a href="/ueber-uns.html">Über uns</a></li>
-      <li><a href="/kontakt.html">Kontakt</a></li>
-      <li><a href="/datenschutz.html">Datenschutz</a></li>
-    </ul>
-    <p>Die Grundschrift App — entwickelt mit dem Grundschulverband</p>
+    <h2>Datenschutz</h2>
+    <p class="statement">Was ein Kind identifiziert, wird auf dem Gerät verschlüsselt. Was die Lehrkraft für die Lernbegleitung braucht, kann der Server lesen. Wir sagen genau, was was ist.</p>
+    <p class="more"><a href="/sicherheit.html">Datenschutz und Sicherheit im Detail</a></p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container two-col">
+    <div>
+      <h2>Freie Software</h2>
+      <p>Grundschrift steht unter der GNU Affero General Public License&nbsp;3.0. Schulen dürfen die App nutzen, den Code lesen und prüfen lassen, ihn ändern und weitergeben. Keine Werbung, kein Tracking, keine Kosten für die App.</p>
+      <p>Der Quellcode folgt zum Start von Version&nbsp;2.0.</p>
+      <p class="more"><a href="/open-source.html">Was die AGPL bedeutet</a></p>
+    </div>
+    <div>
+      <h2>Herkunft</h2>
+      <p>Die erste Version entstand an der Laborschule Bielefeld in Zusammenarbeit mit dem Grundschulverband. 2026 hat Medien-Sandkasten die App als Version&nbsp;2.0 neu geschrieben.</p>
+      <div class="partners">
+        <img src="/images/laborschule_logo.png" alt="Laborschule Bielefeld" width="194" height="56">
+        <img src="/images/gsv_logo.png" alt="Grundschulverband" width="233" height="56">
+      </div>
+      <p class="more"><a href="/ueber.html">Über das Projekt</a></p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p class="footer-brand">Grundschrift</p>
+    <nav aria-label="Weitere Seiten">
+      <ul class="footer-links">
+        <li><a href="/ueber.html">Über das Projekt</a></li>
+        <li><a href="/kontakt.html">Kontakt</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+    <p class="footer-note">
+      Grundschrift ist ein Projekt von Medien-Sandkasten, freie Software unter der AGPL-3.0. Version&nbsp;2.0 ist noch nicht veröffentlicht.<br>
+      Schrift: Grundschrift GSV, <a href="/assets/fonts/OFL.txt">SIL Open Font License&nbsp;1.1</a>.
+    </p>
   </div>
 </footer>
-
 </body>
 </html>
