@@ -61,6 +61,6 @@ setting.
 | `assets/img/finger.png`, `assets/img/star.png` | public image set of the app (`tool/asset_policy.json`) | AGPL-3.0 |
 | `assets/fonts/grundschrift-gsv.woff2` | Grundschrift GSV, unmodified WOFF2 conversion | SIL OFL 1.1 (`assets/fonts/OFL.txt`) |
 | `assets/img/og.png`, `apple-touch-icon.png` | rendered from the font and the level `a` | AGPL-3.0 / OFL 1.1 |
-| `assets/img/screens/` | screenshots of the app, cropped so that no protected illustrations or icons are visible (`src/screens.json`) | AGPL-3.0 |
+| `assets/img/screens/` | full screenshots of the app (`src/screens.json`) | app UI AGPL-3.0; the illustrations and icons shown are protected and used with permission, not under a free licence |
 | `images/laborschule_logo.png`, `images/gsv_logo.png` | partner marks | rights remain with the partners |
 | `images/grundschrift_icon.png` | existing site icon | provenance to be confirmed |
