@@ -1,4 +1,4 @@
-Copyright (c) 2011-2026, Ignacio Ruiz Dominguis and Grundschulverband e.V.,
+Copyright (c) 2011-2026, Medien-Sandkasten and Grundschulverband e.V.,
 www.grundschulverband.de, grundschrift@grundschulverband.de,
 with Reserved Font Name "Grundschrift GSV".
 
