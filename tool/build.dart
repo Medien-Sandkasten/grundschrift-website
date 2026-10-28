@@ -16,8 +16,17 @@
 // Body placeholders:
 //   {{tracer}}        letter demo with letter choice (start page)
 //   {{board:<label>}} single letter demo, e.g. {{board:G}}
+//   {{shot:<key>}}    app screenshot from src/screens.json as a numbered
+//                     figure (Abb. 1, Abb. 2 … in page order); width and
+//                     height are read from the image file itself. Expands
+//                     to nothing for a screenshot that has no crop while
+//                     "illustrations_allowed" is false.
+//   {{screens_licence}} the sentence on what the screenshots show (licence)
+//
+// Screenshots are imported with dart tool/import_screens.dart first.
 import 'dart:convert';
 import 'dart:io';
+import 'dart:typed_data';
 
 const siteUrl = 'https://grundschrift-web.medien-sandkasten.de';
 const siteName = 'Grundschrift';
@@ -65,15 +74,23 @@ class Page {
 }
 
 late final List<Map<String, dynamic>> letters;
+late final Map<String, dynamic> screenConfig;
+late final Map<String, Map<String, dynamic>> screens;
+late final bool fullScreens;
+late final String root;
 
 void main() {
-  final root = Directory.current.path;
+  root = Directory.current.path;
   if (!File('$root/tool/build.dart').existsSync()) {
     stderr.writeln('Run from the repository root: dart tool/build.dart');
     exit(64);
   }
   letters = (jsonDecode(File('$root/src/letters.json').readAsStringSync()) as List)
       .cast<Map<String, dynamic>>();
+  screenConfig = jsonDecode(File('$root/src/screens.json').readAsStringSync()) as Map<String, dynamic>;
+  screens = (screenConfig['screens'] as Map).cast<String, Map<String, dynamic>>();
+  fullScreens = screenConfig['illustrations_allowed'] as bool;
+  _checkScreenFiles();
 
   final sources = Directory('$root/src/pages')
       .listSync()
@@ -223,12 +240,86 @@ $items
 </footer>''';
 }
 
-String _expand(String body) => body
-    .replaceAll('{{tracer}}', _tracer())
-    .replaceAllMapped(
-      RegExp(r'\{\{board:([^}]+)\}\}'),
-      (m) => _board(m.group(1)!.trim()),
+String _expand(String body) {
+  var figure = 0;
+  return body
+      .replaceAll('{{tracer}}', _tracer())
+      .replaceAll(
+        '{{screens_licence}}',
+        (screenConfig['licence'] as Map)[fullScreens ? 'full' : 'cropped']['site'] as String,
+      )
+      .replaceAllMapped(
+        RegExp(r'\{\{board:([^}]+)\}\}'),
+        (m) => _board(m.group(1)!.trim()),
+      )
+      .replaceAllMapped(
+        RegExp(r'\{\{shot:([^}]+)\}\}'),
+        (m) => _available(m.group(1)!.trim()) ? _shot(m.group(1)!.trim(), ++figure) : '',
+      );
+}
+
+/// Whether a screenshot may be shown under the current illustration setting.
+bool _available(String key) {
+  final s = screens[key] ?? (throw ArgumentError('unknown screenshot "$key" in src/screens.json'));
+  return fullScreens || s['crop'] != null;
+}
+
+String _screenFile(String key) => '/assets/img/screens/$key${fullScreens ? '-full' : ''}.webp';
+
+/// The imported files must match the illustration setting exactly: no
+/// missing screenshot, and no file of the other variant left behind.
+void _checkScreenFiles() {
+  final expected = {for (final key in screens.keys) if (_available(key)) _screenFile(key)};
+  final dir = Directory('$root/assets/img/screens');
+  final present = {
+    if (dir.existsSync())
+      for (final f in dir.listSync().whereType<File>()) '/assets/img/screens/${f.uri.pathSegments.last}',
+  };
+  final missing = expected.difference(present), extra = present.difference(expected);
+  if (missing.isNotEmpty || extra.isNotEmpty) {
+    stderr.writeln(
+      'assets/img/screens/ does not match src/screens.json '
+      '(illustrations_allowed: $fullScreens).\n'
+      '${missing.map((f) => '  missing $f\n').join()}${extra.map((f) => '  unexpected $f\n').join()}'
+      'Run: dart tool/import_screens.dart <screenshot directory>',
     );
+    exit(1);
+  }
+}
+
+/// An app screenshot as a numbered figure, like documented teaching material.
+String _shot(String key, int number) {
+  final s = screens[key]!;
+  final file = _screenFile(key);
+  final (w, h) = _imageSize(File('$root$file'));
+  final alt = s[fullScreens ? 'alt_full' : 'alt'] as String;
+  final caption = s[fullScreens ? 'caption_full' : 'caption'] as String;
+  return '''<figure class="shot">
+  <img src="$file" width="$w" height="$h" alt="${_esc(alt)}" loading="lazy" decoding="async">
+  <figcaption><span class="shot-no">Abb.&nbsp;$number</span>${_esc(caption)}</figcaption>
+</figure>''';
+}
+
+/// Pixel size from a PNG or WebP header.
+(int, int) _imageSize(File file) {
+  final b = file.readAsBytesSync();
+  final d = ByteData.sublistView(b);
+  String tag(int at, int n) => String.fromCharCodes(b.sublist(at, at + n));
+  if (tag(1, 3) == 'PNG') return (d.getUint32(16), d.getUint32(20));
+  if (tag(0, 4) == 'RIFF' && tag(8, 4) == 'WEBP') {
+    int u24(int at) => b[at] | b[at + 1] << 8 | b[at + 2] << 16;
+    switch (tag(12, 4)) {
+      case 'VP8X':
+        return (u24(24) + 1, u24(27) + 1);
+      case 'VP8 ':
+        return (d.getUint16(26, Endian.little) & 0x3fff, d.getUint16(28, Endian.little) & 0x3fff);
+      case 'VP8L':
+        final bits = d.getUint32(21, Endian.little);
+        return ((bits & 0x3fff) + 1, ((bits >> 14) & 0x3fff) + 1);
+    }
+  }
+  throw FormatException('${file.path}: not a PNG or WebP image');
+}
 
 Map<String, dynamic> _letter(String label) => letters.firstWhere(
   (l) => l['label'] == label,
