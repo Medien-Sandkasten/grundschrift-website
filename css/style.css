@@ -54,7 +54,7 @@ img { max-width: 100%; height: auto; }
   display: flex;
   align-items: center;
   gap: 10px;
-  color: #1E3A5F;
+  color: #FFFFFF;
   font-family: 'Grundschrift', sans-serif;
   font-size: 1.3rem;
   text-decoration: none;
@@ -75,7 +75,7 @@ img { max-width: 100%; height: auto; }
 
 .nav-links a:hover, .nav-links a.active {
   background: rgba(255,255,255,0.12);
-  color: #1E3A5F;
+  color: #FFFFFF;
   text-decoration: none;
 }
 
@@ -83,7 +83,7 @@ img { max-width: 100%; height: auto; }
   display: none;
   background: none;
   border: none;
-  color: #1E3A5F;
+  color: #FFFFFF;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 4px 8px;
